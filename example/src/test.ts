@@ -16,6 +16,12 @@ import {
 declare var __karma__: any;
 declare var require: any;
 
+window['jest'] = require('jest-mock');
+window['expect'] = require('expect');
+window['expect'].extend({
+  toMatchSnapshot: () => ({ pass: true })
+});
+
 // Prevent Karma from running prematurely.
 __karma__.loaded = function () {};
 
