@@ -21,6 +21,7 @@ window['expect'] = require('expect');
 window['expect'].extend({
   toMatchSnapshot: () => ({ pass: true })
 });
+beforeEach(() => jest.restoreAllMocks());
 
 // Prevent Karma from running prematurely.
 __karma__.loaded = function () {};
